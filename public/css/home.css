@@ -1,0 +1,71 @@
+.content-jumb{
+    background-color: #025E73;
+    color: rgb(255, 255, 255);
+    background-image: url('../assets/images/background.jpg');
+    background-position: center;
+    background-size: cover;
+    /* background-attachment: fixed; */
+}
+.jumbotron h1{
+    background-color: rgba(0, 0, 0, 0.171);
+    backdrop-filter: blur(1px);
+    padding: 5px;
+    border-radius: 10px;
+}
+.content{
+    height: 100vh;
+    background-image: url('../assets/images/backgroundBody.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.btnAction{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center;
+    gap: 5px;
+}
+.windowRegister{
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0000001f;
+    backdrop-filter: blur(1px);
+    transition: .4s ease-in-out;
+}
+.windowRegister.ativeWindow{
+    height: 100vh;
+    overflow: visible;
+}
+.window{
+    height: 80%;
+    width: 50%;
+    border-radius: 10px;
+    padding: 5px;
+}
+.close{
+    position: absolute;
+    right: 0;
+    color: red;
+    cursor: pointer;
+}
+.gameRegister{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+.cardContent{
+    backdrop-filter: blur(1px) !important;
+    background-color: rgba(47, 134, 47, 0.623) !important;
+    color: white !important;
+    border: 1px solid white !important;
+    text-align: center;
+}

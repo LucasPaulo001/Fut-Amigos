@@ -1,0 +1,67 @@
+<div class="p-3 content">
+    <div id="btn-create" class="d-flex justify-content-center w-100">
+        <button onclick="ativeModal()" class="btn btnAction btn-success">Agendar partida
+            <span class="material-symbols-outlined">
+                edit_note
+            </span>
+        </button>
+    </div>
+    <div class="gameRegister mt-4 text-light">
+        {{#each partida}}
+            <div class="card cardContent">
+                <div>
+                    <div class="card-header">
+                        <h4>{{this.title}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <h5>Local: {{this.local}}</h5>
+                        <p>Horário: {{this.dateGame}}</p>
+                    </div>
+                    <div>
+                        <a href="/register/addPerson/{{this._id}}"><button class="btn btn-success">Adicionar participantes</button></a>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <img src="/assets/images/boll.png" height="50px" alt="">
+                </div>
+            </div>
+        {{else}}
+            <div class="d-flex justify-content-center text-light">
+                <h4>Não há nenhuma partida cadastrada!!</h4>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+<div class="windowRegister" id="windowRegister">
+    <div class="window">
+        <div class="card">
+            <span class="material-symbols-outlined close" id="close">
+                close
+            </span>
+            <div class="card-header">
+                <h3>Cadastro de partida</h3>
+            </div>
+            <form action="/" method="post">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="title">Título da partida</label>
+                        <input type="text" id="title" name="title" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="local">Local da partida</label>
+                        <input type="text" id="local" name="local" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="date">Data da partida</label>
+                        <input type="datetime-local" id="date" name="dateGame" class="form-control">
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success">Cadastrar partida</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

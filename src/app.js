@@ -12,6 +12,10 @@
     //Config. dotenv
         dotenv.config()
 
+    //Config. parse json e dados de forms
+        app.use(express.json())
+        app.use(express.urlencoded({extended: true}))
+
     //Config. variáveis para o diretório absoluto
         const __filename = fileURLToPath(import.meta.url)
         const __dirname = path.dirname(__filename)
@@ -38,6 +42,14 @@
     //Config. Mongoose
         import mongoConnect from './configs/db.js'
         mongoConnect(app)
+
+    //Rotas
+        import home from './routes/home.js'
+        import register from './routes/RegisterPersons.js'
+
+    //Configuração de prefixo de rotas
+        app.use('/', home)
+        app.use('/register', register)
 
 //Conexão com o servidor
 const PORT = process.env.PORT
