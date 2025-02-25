@@ -36,7 +36,8 @@
         app.use(express.static(path.join(__dirname, '../public')))
 
     //Config. Mongoose
-        //em breve...
+        import mongoConnect from './configs/db.js'
+        mongoConnect(app)
 
 //Conexão com o servidor
 const PORT = process.env.PORT
