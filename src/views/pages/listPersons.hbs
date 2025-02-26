@@ -3,10 +3,37 @@
         <h1>Lista de jogadores</h1>
     </div>
     <div class="mt-4 d-flex justify-content-center">
-        <ul class="list-group w-50">
+        <ul class="list-group list">
             {{#each data.players}}
-                <li class="list-group-item">Nome: <strong>{{this.name}}</strong> - Telefone: <strong>{{this.phone}}</strong></li>
+                <li class="list-group-item item">
+                    <div class="dataUser">
+                        <span>Nome: <strong>{{this.name}}</strong></span> <span>Telefone: <strong>{{this.phone}}</strong></span>
+                    </div>
+                    <form action="/register/updateStatus/{{this._id}}" method="post">
+                    <div id="btns-with-status">
+                        <div class="btnsFrequency">
+                        
+                            <button class="btn" type="submit">
+                                <span data-id="{{this._id}}" onclick="respUp(this)" class="material-symbols-outlined btnInteraction" id="up" title="Vai!">
+                                    thumb_up
+                                </span>
+                            </button>
+                        
+                            <button class="btn" type="submit">
+                                <span class="no"></span>
+                                <span data-id="{{this._id}}" onclick="respDown(this)" class="material-symbols-outlined btnInteraction" id="down" title="Não vai!">
+                                    thumb_down
+                                </span>
+                            </button>
+                        </div>
+                        <div>
+                            <p class="status">Status: {{this.status}}</p>
+                        </div>
+                    </div>
+                </form>
+                </li>
             {{/each}}
         </ul>
     </div>
 </div>
+<script src="/js/frequencySystem.js"></script>

@@ -28,7 +28,7 @@
             runtimeOptions: {
                 allowProtoPropertiesByDefault: true,
                 allowProtoMethodsByDefault: true
-            }
+            },
         })
 
     //Config da engine

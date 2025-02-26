@@ -79,4 +79,53 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+    margin: 10px;
+}
+.btnsRegister button{
+    border: 1px solid white;
+}
+.item{
+    display: flex !important;
+    justify-content: space-between !important;
+}
+.btnsFrequency{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.btnInteraction{
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+#up:hover{
+    color: green;
+}
+#down:hover{
+    color: red;
+}
+.dataUser{
+    display: flex;
+    flex-direction: column;
+}
+.list{
+    width: 50% !important;
+}
+.cardCadaster{
+    width: 50% !important;
+}
+.upGreen{
+    color: green !important;
+}
+#btns-with-status{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media(max-width: 640px){
+    .list{
+        width: 100% !important;
+    }
+    .cardCadaster{
+        width: 100% !important;
+    }
 }
