@@ -158,4 +158,7 @@
     .window{
         width: 100%;
     }
+    .trash{
+        font-size: 10vw !important;
+    }
 }
