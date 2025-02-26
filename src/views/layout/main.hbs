@@ -17,7 +17,9 @@
 
 </head>
 <body>
-    {{> jumbotron}}
+    {{#if showjunb}}
+        {{> jumbotron}}
+    {{/if}}
     {{{body}}}
 
 

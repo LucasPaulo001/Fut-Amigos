@@ -17,8 +17,13 @@
                         <h5>Local: {{this.local}}</h5>
                         <p>Horário: {{this.dateGame}}</p>
                     </div>
-                    <div>
-                        <a href="/register/addPerson/{{this._id}}"><button class="btn btn-success">Adicionar participantes</button></a>
+                    <div class="btnsRegister">
+                        <div>
+                            <a href="/register/addPerson/{{this._id}}"><button class="btn btn-success">Adicionar participantes</button></a>
+                        </div>
+                        <div>
+                            <a href="/register/listPersons/{{this._id}}"><button class="btn btn-success">Listar Participantes</button></a>
+                        </div>
                     </div>
                 </div>
                 <hr>

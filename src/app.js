@@ -36,6 +36,17 @@
         app.set('view engine', 'hbs')
         app.set('views', path.join(__dirname, 'views'))
 
+    //Config. de condição para o junbotrom
+    app.use((req, res, next) => {
+        // Verifica se o caminho da requisição corresponde ao padrão da rota dinâmica
+        if (/^\/register\/addPerson\/[^/]+$/.test(req.path) || /^\/register\/listPersons\/[^/]+$/.test(req.path)) {
+            res.locals.showjunb = false; // Esconde o Jumbotron
+        } else {
+            res.locals.showjunb = true;  // Exibe o Jumbotron
+        }
+        next();
+    });
+
     //Config para arquivos estáticos
         app.use(express.static(path.join(__dirname, '../public')))
 

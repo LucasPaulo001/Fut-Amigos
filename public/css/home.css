@@ -69,3 +69,14 @@
     border: 1px solid white !important;
     text-align: center;
 }
+.titlePag{
+    border-bottom: 1px solid white;
+}
+.headerCd{
+    text-align: center;
+}
+.btnsRegister{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}

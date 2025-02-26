@@ -1,1 +1,27 @@
-<h2>Adicionar participantes para a partida - {{partidaData.title}}</h2>
+<div class="content p-3">
+    <div class="d-flex titlePag justify-content-center text-light mt-4">
+        <h2>Adicionar participantes para a partida - {{partidaData.title}}</h2>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="card w-50 mt-4">
+            <div class="card-header headerCd">
+                <h4>Preencha com os dados dos jogadores</h4>
+            </div>
+            <form action="/register/addPerson/{{partidaData._id}}" method="post">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="Nome">Nome: </label>
+                        <input type="text" placeholder="Nome do jogador..." class="form-control" name="name" id="Nome">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone">Telefone: </label>
+                        <input type="tel" placeholder="Telefone para contato..." class="form-control" name="phone" id="phone">
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-center">
+                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
