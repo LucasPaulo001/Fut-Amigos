@@ -116,10 +116,37 @@
 .upGreen{
     color: green !important;
 }
+.activeUp{
+    color: green;
+}
+.activeDown{
+    color: red;
+}
 #btns-with-status{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.headerHome{
+    display: flex;
+    justify-content: space-between;
+}
+.trash{
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    font-size: 3vw !important;
+    transition: .4s ease-in-out;
+}
+.trash:hover{
+    color: rgba(255, 0, 0, 0.815);
+    background-color: white;
+    border-radius: 10px;
+}
+.footerPage{
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 @media(max-width: 640px){
     .list{
@@ -127,5 +154,8 @@
     }
     .cardCadaster{
         width: 100% !important;
+    }
+    .window{
+        width: 100%;
     }
 }

@@ -14,14 +14,21 @@
                         <div class="btnsFrequency">
                         
                             <button class="btn" type="submit">
-                                <span data-id="{{this._id}}" onclick="respUp(this)" class="material-symbols-outlined btnInteraction" id="up" title="Vai!">
+                                <span data-id="{{this._id}}" onclick="respUp(this)" class="material-symbols-outlined 
+                                {{#if (eq this.status "Vai!")}}
+                                    activeUp 
+                                {{/if}}
+                                " id="up" title="Vai!">
                                     thumb_up
                                 </span>
                             </button>
                         
                             <button class="btn" type="submit">
                                 <span class="no"></span>
-                                <span data-id="{{this._id}}" onclick="respDown(this)" class="material-symbols-outlined btnInteraction" id="down" title="Não vai!">
+                                <span data-id="{{this._id}}" onclick="respDown(this)" class="material-symbols-outlined 
+                                {{#if (eq this.status "Não vai!")}}
+                                    activeDown 
+                                {{/if}}" id="down" title="Não vai!">
                                     thumb_down
                                 </span>
                             </button>
@@ -32,6 +39,10 @@
                     </div>
                 </form>
                 </li>
+            {{else}}
+                <div class="text-light d-flex justify-content-center mt-4">
+                    <h4>Nenhum jogador cadastrado!</h4>
+                </div>
             {{/each}}
         </ul>
     </div>

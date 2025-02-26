@@ -10,8 +10,12 @@
         {{#each partida}}
             <div class="card cardContent">
                 <div>
-                    <div class="card-header">
+                    <div class="card-header headerHome">
                         <h4>{{this.title}}</h4>
+                        <span data-id="{{this._id}}" onclick="deleteMatch(this)" class="material-symbols-outlined trash">
+                            delete
+                        </span>
+                        
                     </div>
                     <div class="card-body">
                         <h5>Local: {{this.local}}</h5>
@@ -70,3 +74,4 @@
         </div>
     </div>
 </div>
+{{!-- <script src="deletMatch.js"></script> --}}

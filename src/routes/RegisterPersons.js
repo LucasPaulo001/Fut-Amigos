@@ -74,13 +74,34 @@ register.post('/updateStatus/:id', (req, res) => {
         if (!updatedPlayer) {
             return res.status(404).json({ message: 'Jogador não encontrado' });
         }
-        res.json({ message: 'Status atualizado com sucesso!', player: updatedPlayer });
+        res.redirect(req.headers.referer)
     })
     .catch(error => {
-        console.log(error);
-        res.status(500).json({ message: 'Erro ao atualizar status.' });
-    });
-});
+        console.log(error)
+        res.status(500).json({ message: 'Erro ao atualizar status.' })
+    })
+})
+
+register.delete('/deleteMatch/:id', (req, res) => {
+    const { id } = req.params
+    Partida.findById(id)
+    .then(partida => {
+        if(!partida){
+            return res.status(404).json({ message: "Partida não encontrada" })
+        }
+        return Players.deleteMany({ _id: { $in: partida.players } })
+        .then(() => {
+            return Partida.findByIdAndDelete(id)
+        })
+    })
+    .then(() => {
+        res.json({ success: true })
+    })
+    .catch((error) => { 
+        console.log(error)
+        res.status(500).json({ error: 'Erro ao excluir a partida' })
+    })
+})
 
 
 export default register

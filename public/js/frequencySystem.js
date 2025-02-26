@@ -53,8 +53,11 @@ function respDown(element) {
         body: JSON.stringify({ status: 'Não vai!' })
     })
     .then(response => {
-        if (!response.ok) throw new Error('Erro na requisição');
-        return response.json();
+        if (response.redirected) {
+            window.location.href = response.url; // Redireciona para a página de onde veio a requisição
+        } else {
+            return response.json();
+        }
     })
     .then(dataJson => {
         console.log(dataJson);
@@ -66,6 +69,7 @@ function respDown(element) {
             upButton.style.color = '';
         }
         // })
+        window.location.href = '/'
     })
     .catch(error => {
         console.error('Erro:', error);

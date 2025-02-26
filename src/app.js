@@ -29,6 +29,11 @@
                 allowProtoPropertiesByDefault: true,
                 allowProtoMethodsByDefault: true
             },
+            helpers: {
+                eq: function (a, b) {
+                    return a === b;
+                }
+            }
         })
 
     //Config da engine
