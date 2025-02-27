@@ -40,8 +40,10 @@
                 </form>
                 </li>
             {{else}}
-                <div class="text-light d-flex justify-content-center mt-4">
+                <div class="text-light nobody d-flex justify-content-center mt-4">
                     <h4>Nenhum jogador cadastrado!</h4>
+                    <a href="/register/addPerson/{{data._id}}"><button class="btn btn-success">Cadastrar?</button></a>
+                    <img src="/assets/images/nobody.jpg" height="200px" alt="">
                 </div>
             {{/each}}
         </ul>

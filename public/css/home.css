@@ -12,12 +12,15 @@
     padding: 5px;
     border-radius: 10px;
 }
-.content{
-    height: 100vh;
+body{
     background-image: url('../assets/images/backgroundBody.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+}
+.content{
+    height: 100vh;
+    margin-bottom: 20%;
 }
 .btnAction{
     display: flex !important;
@@ -59,8 +62,8 @@
 }
 .gameRegister{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
 }
 .cardContent{
     backdrop-filter: blur(1px) !important;
@@ -148,6 +151,14 @@
     align-items: center;
     justify-content: center;
 }
+.nobody{
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.nobody img{
+    border-radius: 20px;
+}
 @media(max-width: 640px){
     .list{
         width: 100% !important;
@@ -160,5 +171,8 @@
     }
     .trash{
         font-size: 10vw !important;
+    }
+    .content{
+        margin-bottom: 35%;
     }
 }
